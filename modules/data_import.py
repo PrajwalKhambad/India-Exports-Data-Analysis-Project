@@ -38,13 +38,18 @@ def load_and_clean_data(data_folder="data/"):
     combined_df['Value_USD_Million'] = combined_df['Value_USD_Million'].replace(',', '', regex=True).astype(float)
     combined_df['Quantity'] = pd.to_numeric(combined_df['Quantity'].replace(',', '', regex=True), errors='coerce')
 
+    combined_df = combined_df.dropna(subset='Country')
+    # print(combined_df.shape)
+
     combined_df['Year'] = combined_df['Year'].apply(format_year)
 
     # Split into physical vs non-physical exports
     df_with_quantity = combined_df.dropna(subset=['Quantity', 'Unit']).copy()
     df_without_quantity = combined_df[combined_df['Quantity'].isna() | combined_df['Unit'].isna()].copy()
+    df_without_quantity_strict = combined_df[combined_df['Quantity'].isna() & combined_df['Unit'].isna()].copy()
 
-    return combined_df, df_with_quantity, df_without_quantity
+
+    return combined_df, df_with_quantity, df_without_quantity, df_without_quantity_strict
 
 # # Example usage (for testing)
 # if __name__ == "__main__":
