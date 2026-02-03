@@ -5,7 +5,7 @@ def render_ml_page(combined_df):
     st.title("Export Value Prediction")
 
     export_type = st.radio(
-        # "Select Export Type",
+        "Select Export Type",
         ["Physical", "Non-Physical"]
     )
 
