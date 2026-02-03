@@ -4,7 +4,7 @@ from ml.predict import predict_non_physical, predict_physical
 def render_ml_page(combined_df):
     st.title("Export Value Prediction")
 
-    export_type = st.tabs(
+    export_type = st.radio(
         # "Select Export Type",
         ["Physical", "Non-Physical"]
     )
