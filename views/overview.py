@@ -2,6 +2,7 @@ import streamlit as st
 
 def load_overview(combined_df):
     st.title("Overview India Exports")
+    st.divider()
 
     years = sorted(combined_df["Year"].unique())
     selected_years = st.multiselect(

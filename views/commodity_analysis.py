@@ -38,7 +38,7 @@ def load_commodity_analysis(combined_df):
     )
 
     fig_bar.update_layout(
-        xaxis_tickangle=-45,
+        xaxis_tickangle=90,
         hovermode="x unified"
     )
 

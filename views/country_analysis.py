@@ -4,6 +4,7 @@ import plotly.express as px
 
 def load_country_analysis(combined_df):
     st.title("Country-wise Export Analysis")
+    st.divider()
 
     years = sorted(combined_df["Year"].unique())
     selected_years = st.multiselect(
@@ -29,7 +30,6 @@ def load_country_analysis(combined_df):
 
     top_country_df = country_df.head(top_n)
 
-    # ---- Bar chart
     fig_bar = px.bar(
         top_country_df,
         x="Country",
@@ -42,29 +42,28 @@ def load_country_analysis(combined_df):
 
     st.markdown("---")
 
-    # ---- Choropleth Map
-    st.subheader("🌍 Global Export Distribution")
+    # # ---- Choropleth Map
+    # st.subheader("🌍 Global Export Distribution")
 
-    fig_map = px.choropleth(
-        country_df,
-        # locations="ISO3",
-        locations='Country',
-        # locationmode="country names",
-        color="Value_USD_Million",
-        hover_name="Country",
-        color_continuous_scale="viridis",
-        title="India's Export Value by Country"
-    )
+    # fig_map = px.choropleth(
+    #     country_df,
+    #     # locations="ISO3",
+    #     locations='Country',
+    #     # locationmode="country names",
+    #     color="Value_USD_Million",
+    #     hover_name="Country",
+    #     color_continuous_scale="viridis",
+    #     title="India's Export Value by Country"
+    # )
 
-    fig_map.update_layout(
-    geo=dict(showframe=False, showcoastlines=True)
-    )
+    # fig_map.update_layout(
+    # geo=dict(showframe=False, showcoastlines=True)
+    # )
 
-    st.plotly_chart(fig_map, use_container_width=True)
+    # st.plotly_chart(fig_map, use_container_width=True)
 
-    st.markdown("---")
+    # st.markdown("---")
 
 
-    # ---- Data table
     with st.expander("📄 View Country-wise Data"):
         st.dataframe(country_df, use_container_width=True)

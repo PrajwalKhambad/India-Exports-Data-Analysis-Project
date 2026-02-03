@@ -3,6 +3,7 @@ import plotly.express as px
 
 def load_trends(combined_df):
     st.title("Export Trends")
+    st.divider()
 
     years = sorted(combined_df["Year"].unique())
     selected_years = st.multiselect(

@@ -4,6 +4,7 @@ import pandas as pd
 
 def load_comparison(combined_df, df_with_qty, df_without_qty_strict):
     st.title("Physical vs Non-Physical Exports")
+    st.divider()
 
     years = sorted(combined_df["Year"].unique())
     selected_years = st.multiselect(

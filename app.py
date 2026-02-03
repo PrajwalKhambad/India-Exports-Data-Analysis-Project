@@ -1,7 +1,5 @@
 import streamlit as st
-import pandas as pd
 from modules.data_import import load_and_clean_data
-import pycountry
 
 
 st.set_page_config(
@@ -15,7 +13,7 @@ combined_df, df_with_qty, df_without_qty, df_without_qty_strict = load_and_clean
 
 st.sidebar.title("Navigation")
 
-page = st.sidebar.radio(
+page = st.sidebar.selectbox(
     "Go to",
     ["Overview", "Trends", "Country Analysis", "Commodity Analysis", 
     "Compare(Physical vs. Non-physical)", "ML Predictor"]
