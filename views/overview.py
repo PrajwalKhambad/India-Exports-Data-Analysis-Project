@@ -26,6 +26,6 @@ def load_overview(combined_df):
     st.markdown("---")
 
     st.subheader("Dataset Preview")
-    st.dataframe(df.head(50), use_container_width=True)
+    st.dataframe(df.head(50), width = 'stretch')
 
     return

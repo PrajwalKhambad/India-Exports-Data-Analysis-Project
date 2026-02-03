@@ -58,7 +58,7 @@ def load_comparison(combined_df, df_with_qty, df_without_qty_strict):
 
     fig.update_layout(hovermode="x unified")
 
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width = 'stretch')
 
     st.markdown("---")
     share_df = compare_df.copy()
@@ -75,4 +75,4 @@ def load_comparison(combined_df, df_with_qty, df_without_qty_strict):
         labels={"Share": "Percentage Share"}
     )
 
-    st.plotly_chart(fig_share, use_container_width=True)
+    st.plotly_chart(fig_share, width = 'stretch')

@@ -38,7 +38,7 @@ def load_country_analysis(combined_df):
         labels={"Value_USD_Million": "Export Value (USD Million)"}
     )
 
-    st.plotly_chart(fig_bar, use_container_width=True)
+    st.plotly_chart(fig_bar, width = 'stretch')
 
     st.markdown("---")
 
@@ -60,10 +60,10 @@ def load_country_analysis(combined_df):
     # geo=dict(showframe=False, showcoastlines=True)
     # )
 
-    # st.plotly_chart(fig_map, use_container_width=True)
+    # st.plotly_chart(fig_map, width = 'stretch')
 
     # st.markdown("---")
 
 
     with st.expander("📄 View Country-wise Data"):
-        st.dataframe(country_df, use_container_width=True)
+        st.dataframe(country_df, width = 'stretch')

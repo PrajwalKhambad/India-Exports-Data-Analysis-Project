@@ -42,7 +42,7 @@ def load_commodity_analysis(combined_df):
         hovermode="x unified"
     )
 
-    st.plotly_chart(fig_bar, use_container_width=True)
+    st.plotly_chart(fig_bar, width = 'stretch')
 
     total_export = commodity_df["Value_USD_Million"].sum()
     top_export = top_commodity_df["Value_USD_Million"].sum()
@@ -81,8 +81,8 @@ def load_commodity_analysis(combined_df):
 
     fig_trend.update_layout(hovermode="x unified")
 
-    st.plotly_chart(fig_trend, use_container_width=True)
+    st.plotly_chart(fig_trend, width = 'stretch')
     st.divider()
 
     with st.expander("📄 View Commodity-wise Data"):
-        st.dataframe(commodity_df, use_container_width=True)
+        st.dataframe(commodity_df, width = 'stretch')
